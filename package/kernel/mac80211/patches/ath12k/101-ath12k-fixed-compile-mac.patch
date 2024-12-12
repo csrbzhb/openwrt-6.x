@@ -1,0 +1,31 @@
+From eef314d24fc687d9a25d5ceeeb3a4bab5c4925ff Mon Sep 17 00:00:00 2001
+From: "zoucl@caimore.com" <crmxmcmtxkjyxgs_81202>
+Date: Thu, 12 Dec 2024 13:58:52 +0800
+Subject: [PATCH] test
+
+---
+ drivers/net/wireless/ath/ath12k/mac.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
+index 9576b09..e411522 100644
+--- a/drivers/net/wireless/ath/ath12k/mac.c
++++ b/drivers/net/wireless/ath/ath12k/mac.c
+@@ -6421,12 +6421,13 @@ static void ath12k_mac_update_vif_offload(struct ath12k_vif *arvif)
+ 	}
+ }
+ 
+-static void ath12k_mac_op_update_vif_offload(struct ieee80211_hw *hw,
++static int ath12k_mac_op_update_vif_offload(struct ieee80211_hw *hw,
+ 					     struct ieee80211_vif *vif)
+ {
+ 	struct ath12k_vif *arvif = ath12k_vif_to_arvif(vif);
+ 
+ 	ath12k_mac_update_vif_offload(arvif);
++	return 0;
+ }
+ 
+ static bool ath12k_mac_vif_ap_active_any(struct ath12k_base *ab)
+-- 
+2.34.1
+
